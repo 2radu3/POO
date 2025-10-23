@@ -92,6 +92,23 @@ public:
 		//modifica nota
 	}
 
+	int getNota(int _index) {
+		//to do home
+		return 0;
+	}
+
+	int getNrNote(int _index) {
+		//to do home
+		return 0;
+	}
+
+	//meth prelucrare
+	//meth care sterge prima nota
+	//meth care sterge ultima nota
+	//meth care sterge toate notele
+	//meth care dubleaza ultima nota
+	//meth care adauga o noua nota la sfarsitul vectorului
+
 	//supraincarcare de operatori
 
 	//destructor
