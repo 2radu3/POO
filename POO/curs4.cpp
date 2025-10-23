@@ -57,6 +57,10 @@ public:
 	string getDenumire() {
 		return this->denumire;
 	}
+
+	void setDenumire(string _denumire) {
+		this->denumire = _denumire;
+	}
 	
 	// 3.destructor
 	// 4.meth de prelucrare (afisare)
@@ -91,7 +95,8 @@ int main() {
 	Produs p9("Stilou", 100, 10);
 	p9.afisare();
 	cout << "\nAfisare Denumire\n" << p9.getDenumire();
-	
+	p9.setDenumire("Pix");
+	cout << "\nAfisare Denumire\n" << p9.getDenumire();
 
 	return 0;
 }
