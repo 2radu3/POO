@@ -108,6 +108,9 @@ public:
 	//meth care sterge toate notele
 	//meth care dubleaza ultima nota
 	//meth care adauga o noua nota la sfarsitul vectorului
+	//clasa despre masina care ii stiu cap rezervorului, cap curenta, si un vector de alimentari si o metoda care sa 
+	//consume combustibilul, consum mediu optional
+	//vectorul de alimenatare 5l, 10l 3l, cat am pus
 
 	//supraincarcare de operatori
 
