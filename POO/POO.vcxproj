@@ -123,8 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Exercitiu_1.cpp" />
-    <ClCompile Include="seminar4.cpp" />
+    <ClCompile Include="curs4.cpp" />
     <ClCompile Include="tema3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

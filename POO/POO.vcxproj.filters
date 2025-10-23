@@ -18,10 +18,7 @@
     <ClCompile Include="tema3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Exercitiu_1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="seminar4.cpp">
+    <ClCompile Include="curs4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

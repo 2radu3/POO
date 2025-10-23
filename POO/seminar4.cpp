@@ -122,12 +122,12 @@ int main()
 {
 	Student s1;
 	s1.afisare();
-	Student* s2; //pointer la sudent, 4 bytes, nu se apeleaza niciun constructor
-	s2 = new Student(); //apelul constructorului fara param
-	s2 = new Student[5]; //un vector alocat dinamic de student, se apeleaza de 5 ori constructorul default
-	s2 = new Student; //echivalentul liniei 84
+	Student* s2; //pointer la sudent, 4/8 bytes, nu se apeleaza niciun constructor
+	s2 = new Student(); //apelul constructorului fara param o singura data
+	s2 = new Student[5]; //un vector alocat dinamic de student, se apeleaza de 5 ori constructorul default, sizeof 5*obiectul implicit
+	s2 = new Student; //echivalentul new Student();
 	Student s3[5]; //un vector alocat static de obiecte de tip student, se apeleaza de 5 ori constructorul default, sizeof=5*cat ocupa student
-	Student* s4[5]; //vector de pointeri alocat static de student*, sizeof = 4*5/8*5 
+	Student* s4[5]; //vector static de pointeri alocat static de student*, sizeof = 4*5/8*5, nu se apeleaza niciun constructor, poate sa devina matrice
 	Student** s5; //pointer la pointer la student, sizeof 4/8, poate sa devina un vector alocat dinamic de pointer la student, poate sa devina
 				  //o matrice, mai merge lucrat
 	Student s6(2); //se apeleaza constructorul cu un parametru
