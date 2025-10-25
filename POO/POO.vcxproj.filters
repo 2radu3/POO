@@ -18,7 +18,7 @@
     <ClCompile Include="tema3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="curs4.cpp">
+    <ClCompile Include="Tema4GetSet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
