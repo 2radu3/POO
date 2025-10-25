@@ -14,7 +14,6 @@ public:
 	double buget;
 
 	Student() {
-		cout << "Apel constructor faram param\n";
 		this->nume = "Anonim";
 		this->nrNote = 0;
 		this->note = nullptr;
@@ -22,35 +21,69 @@ public:
 	}
 
 	void setNrNote(int _nrNote, int* _note) {
-		delete[] this->nrNote;
-		if(nr)
-		this->nrNote = _nrNote;
+		delete[] this->note;
+		if (_nrNote > 0 && _note != nullptr)
+		{
+			this->nrNote = _nrNote;
+			this->note = new int[this->nrNote];
+			for (int i = 0; i < this->nrNote; i++)
+			{
+				this->note[i] = _note[i];
+			}
+		}
+		else {
+			this->nrNote = 0;
+			this->note = nullptr;
+		}
 
 	}
 
+	int getNrNote() {
+		return nrNote;
+	}
 
+	int* getNote() {
+		return note;
+	}
 
+	void stergePrimaNota() {
+		int* notenoi = new int[this->nrNote - 1];
+		for (int i = 1; i < this->nrNote; i++)
+			notenoi[i - 1]=note[i];
+		delete[] this->note;
+		this->nrNote = this->nrNote - 1;
+		this->note = notenoi;
+	}
 
 
 
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 int main() {
+
+	Student s1;
+	int noteint[] = { 2, 3, 4, 5 };
+	int nrnote = sizeof(noteint) / sizeof(noteint[0]);
+	
+	
+	s1.setNrNote(nrnote, noteint);
+	cout << "Numar note: " << s1.getNrNote();
+
+	int* note = s1.getNote();
+	cout << "\nNote: ";
+	for (int i = 0; i < s1.getNrNote(); i++)
+		cout << note[i] << " ";
+
+
+	s1.stergePrimaNota();
+	cout << "\nNumar note: " << s1.getNrNote();
+
+	note = s1.getNote();
+	cout << "\nNote: ";
+	for (int i = 0; i < s1.getNrNote(); i++)
+		cout << note[i] << " ";
+
+	
 
 	return 0;
 }
