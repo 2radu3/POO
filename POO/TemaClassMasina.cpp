@@ -1,4 +1,4 @@
-//clasa despre masina despre care ii stiu cap rezervorului, cap curenta, si un vector de alimentari si o metoda care sa 
+//clasa masina despre care ii stiu cap rezervorului, cap curenta, un vector de alimentari si o metoda care sa 
 //consume combustibilul, consum mediu optional
 //vectorul de alimenatare 5l, 10l 3l, cat am pus
 #include <iostream>
@@ -41,11 +41,6 @@ public:
 		}
 
 	}
-	double getCapCurenta()
-	{
-		return capcurenta;
-	}
-
 	double consumCombustibil(double _litri) {
 		if (_litri > this->capcurenta) {
 			cout << "\nNu se poate consuma mai mult decat capacitatea curenta\n";
@@ -88,7 +83,7 @@ int main() {
 	m1.alimentare(20);
 	m1.afisare();
 
-	m1.consumCombustibil(100);
+	m1.consumCombustibil(10);
 	m1.afisare();
 
 	cout << "\nConsumul mediu: " << m1.consumMediu();
