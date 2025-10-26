@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Tema4metode.cpp">
+    <ClCompile Include="TemaClassMasina.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
