@@ -1,8 +1,8 @@
-	//meth care sterge prima nota
-	//meth care sterge ultima nota
-	//meth care sterge toate notele
-	//meth care dubleaza ultima nota
-	//meth care adauga o noua nota la sfarsitul vectorului
+//meth care sterge prima nota
+//meth care sterge ultima nota
+//meth care sterge toate notele
+//meth care dubleaza ultima nota
+//meth care adauga o noua nota la sfarsitul vectorului
 #include <iostream>
 using namespace std;
 
@@ -49,11 +49,11 @@ public:
 	void stergePrimaNota() {
 		if (this->nrNote < 1)
 		{
-			cout << "\nPrima nota nu se poate sterge";
+			cout << "\nPrima nota nu se poate sterge\n";
 		}
 		else
 		{
-			cout << "\nStergere Prima Nota";
+			cout << "\nStergere Prima Nota\n";
 			int* notenoi = new int[this->nrNote - 1];
 			for (int i = 1; i < this->nrNote; i++)
 				notenoi[i - 1] = note[i];
@@ -66,11 +66,11 @@ public:
 	void stergeUltimaNota() {
 		if (this->nrNote < 1)
 		{
-			cout << "\nUltima nota nu se poate sterge";
+			cout << "\nUltima nota nu se poate sterge\n";
 		}
 		else
 		{
-			cout << "\nStergere Ultima Nota";
+			cout << "\nStergere Ultima Nota\n";
 			int* notenoi = new int[this->nrNote - 1];
 			for (int i = 0; i < this->nrNote - 1; i++)
 				notenoi[i] = note[i];
@@ -81,18 +81,18 @@ public:
 	}
 
 	void stergeToateNotele() {
-		cout << "\nStergere Toate Notele";
+		cout << "\nStergere Toate Notele\n";
 		this->nrNote = 0;
 	}
 
 	void dubleazaUltimaNota() {
 		if (this->nrNote < 1)
 		{
-			cout << "\nNota nu se poate dubla";
+			cout << "\nNota nu se poate dubla\n";
 		}
 		else
 		{
-			cout << "\nDublare Ultima Nota";
+			cout << "\nDublare Ultima Nota\n";
 			int* notenoi = new int[this->nrNote + 1];
 			for (int i = 0; i < this->nrNote; i++)
 				notenoi[i] = note[i];
@@ -106,11 +106,11 @@ public:
 	void adaugaNota(int _nota) {
 		if (_nota < 1 || _nota>10)
 		{
-			cout << "\nNota nu se poate adauga";
+			cout << "\nNota nu se poate adauga\n";
 		}
 		else
 		{
-			cout << "\nAdaugare Ultima Nota";
+			cout << "\nAdaugare Ultima Nota\n";
 			int* notenoi = new int[this->nrNote + 1];
 			for (int i = 0; i < this->nrNote; i++)
 				notenoi[i] = note[i];
@@ -121,7 +121,14 @@ public:
 		}
 	}
 
-
+	void afisare()
+	{
+		cout << "Numar note: " << this->nrNote;
+		cout << "\nNote: ";
+		for (int i = 0; i < this->nrNote; i++)
+			cout << this->note[i] << " ";
+		cout << "\n";
+	}
 };
 
 int main() {
@@ -130,61 +137,23 @@ int main() {
 	int noteint[] = { 2, 3, 4, 5 };
 	int nrnote = sizeof(noteint) / sizeof(noteint[0]);
 	
-	
 	s1.setNrNote(nrnote, noteint);
-	cout << "Numar note: " << s1.getNrNote();
-
-	int* note = s1.getNote();
-	cout << "\nNote: ";
-	for (int i = 0; i < s1.getNrNote(); i++)
-		cout << note[i] << " ";
-	cout << "\n";
+	s1.afisare();
 
 	s1.stergePrimaNota();
-	cout << "\nNumar note: " << s1.getNrNote();
-	note = s1.getNote();
-	cout << "\nNote: ";
-	for (int i = 0; i < s1.getNrNote(); i++)
-		cout << note[i] << " ";
-	cout << "\n";
-
+	s1.afisare();
 
 	s1.stergeUltimaNota();
-	cout << "\nNumar note: " << s1.getNrNote();
-	note = s1.getNote();
-	cout << "\nNote: ";
-	for (int i = 0; i < s1.getNrNote(); i++)
-		cout << note[i] << " ";
-	cout << "\n";
-
+	s1.afisare();
 
 	s1.dubleazaUltimaNota();
-	cout << "\nNumar note: " << s1.getNrNote();
-	note = s1.getNote();
-	cout << "\nNote: ";
-	for (int i = 0; i < s1.getNrNote(); i++)
-		cout << note[i] << " ";
-	cout << "\n";
-
+	s1.afisare();
 
 	s1.adaugaNota(10);
-	cout << "\nNumar note: " << s1.getNrNote();
-	note = s1.getNote();
-	cout << "\nNote: ";
-	for (int i = 0; i < s1.getNrNote(); i++)
-		cout << note[i] << " ";
-	cout << "\n";
+	s1.afisare();
 
 	s1.stergeToateNotele();
-	cout << "\nNumar note: " << s1.getNrNote();
-	note = s1.getNote();
-	cout << "\nNote: ";
-	for (int i = 0; i < s1.getNrNote(); i++)
-		cout << note[i] << " ";
-	cout << "\n";
+	s1.afisare();
 	
-
-	
-
 	return 0;
 }
