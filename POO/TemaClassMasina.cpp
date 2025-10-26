@@ -87,6 +87,7 @@ int main() {
 	m1.afisare();
 
 	cout << "\nConsumul mediu: " << m1.consumMediu();
+	cout << "\n";
 
 	return 0;
 }
