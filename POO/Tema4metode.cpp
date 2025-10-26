@@ -47,45 +47,78 @@ public:
 	}
 
 	void stergePrimaNota() {
-		int* notenoi = new int[this->nrNote - 1];
-		for (int i = 1; i < this->nrNote; i++)
-			notenoi[i - 1]=note[i];
-		delete[] this->note;
-		this->nrNote = this->nrNote - 1;
-		this->note = notenoi;
+		if (this->nrNote < 1)
+		{
+			cout << "\nPrima nota nu se poate sterge";
+		}
+		else
+		{
+			cout << "\nStergere Prima Nota";
+			int* notenoi = new int[this->nrNote - 1];
+			for (int i = 1; i < this->nrNote; i++)
+				notenoi[i - 1] = note[i];
+			delete[] this->note;
+			this->nrNote = this->nrNote - 1;
+			this->note = notenoi;
+		}
 	}
 
 	void stergeUltimaNota() {
-		int* notenoi = new int[this->nrNote - 1];
-		for (int i = 0; i < this->nrNote - 1; i++)
-			notenoi[i] = note[i];
-		delete[] this->note;
-		this->nrNote = this->nrNote - 1;
-		this->note = notenoi;
+		if (this->nrNote < 1)
+		{
+			cout << "\nUltima nota nu se poate sterge";
+		}
+		else
+		{
+			cout << "\nStergere Ultima Nota";
+			int* notenoi = new int[this->nrNote - 1];
+			for (int i = 0; i < this->nrNote - 1; i++)
+				notenoi[i] = note[i];
+			delete[] this->note;
+			this->nrNote = this->nrNote - 1;
+			this->note = notenoi;
+		}
 	}
 
 	void stergeToateNotele() {
+		cout << "\nStergere Toate Notele";
 		this->nrNote = 0;
 	}
 
 	void dubleazaUltimaNota() {
-		int* notenoi = new int[this->nrNote + 1];
-		for (int i = 0; i < this->nrNote; i++)
-			notenoi[i] = note[i];
-		notenoi[this->nrNote] = note[this->nrNote - 1];
-		delete[] this->note;
-		this->nrNote = this->nrNote + 1;
-		this->note = notenoi;
+		if (this->nrNote < 1)
+		{
+			cout << "\nNota nu se poate dubla";
+		}
+		else
+		{
+			cout << "\nDublare Ultima Nota";
+			int* notenoi = new int[this->nrNote + 1];
+			for (int i = 0; i < this->nrNote; i++)
+				notenoi[i] = note[i];
+			notenoi[this->nrNote] = note[this->nrNote - 1];
+			delete[] this->note;
+			this->nrNote = this->nrNote + 1;
+			this->note = notenoi;
+		}
 	}
 
 	void adaugaNota(int _nota) {
-		int* notenoi = new int[this->nrNote + 1];
-		for (int i = 0; i < this->nrNote; i++)
-			notenoi[i] = note[i];
-		notenoi[this->nrNote] = _nota;
-		delete[] this->note;
-		this->nrNote = this->nrNote + 1;
-		this->note = notenoi;
+		if (_nota < 1 || _nota>10)
+		{
+			cout << "\nNota nu se poate adauga";
+		}
+		else
+		{
+			cout << "\nAdaugare Ultima Nota";
+			int* notenoi = new int[this->nrNote + 1];
+			for (int i = 0; i < this->nrNote; i++)
+				notenoi[i] = note[i];
+			notenoi[this->nrNote] = _nota;
+			delete[] this->note;
+			this->nrNote = this->nrNote + 1;
+			this->note = notenoi;
+		}
 	}
 
 
@@ -107,9 +140,7 @@ int main() {
 		cout << note[i] << " ";
 	cout << "\n";
 
-
 	s1.stergePrimaNota();
-	cout << "\nStergere Prima Nota";
 	cout << "\nNumar note: " << s1.getNrNote();
 	note = s1.getNote();
 	cout << "\nNote: ";
@@ -119,7 +150,6 @@ int main() {
 
 
 	s1.stergeUltimaNota();
-	cout << "\nStergere Ultima Nota";
 	cout << "\nNumar note: " << s1.getNrNote();
 	note = s1.getNote();
 	cout << "\nNote: ";
@@ -129,7 +159,6 @@ int main() {
 
 
 	s1.dubleazaUltimaNota();
-	cout << "\nDublare Ultima Nota";
 	cout << "\nNumar note: " << s1.getNrNote();
 	note = s1.getNote();
 	cout << "\nNote: ";
@@ -138,24 +167,22 @@ int main() {
 	cout << "\n";
 
 
-	s1.adaugaNota(9);
-	cout << "\nAdaugare Ultima Nota";
+	s1.adaugaNota(10);
 	cout << "\nNumar note: " << s1.getNrNote();
 	note = s1.getNote();
 	cout << "\nNote: ";
 	for (int i = 0; i < s1.getNrNote(); i++)
 		cout << note[i] << " ";
 	cout << "\n";
-
 
 	s1.stergeToateNotele();
-	cout << "\nStergere Toate Notele";
 	cout << "\nNumar note: " << s1.getNrNote();
 	note = s1.getNote();
 	cout << "\nNote: ";
 	for (int i = 0; i < s1.getNrNote(); i++)
 		cout << note[i] << " ";
 	cout << "\n";
+	
 
 	
 
