@@ -46,6 +46,29 @@ public:
 			this->pret = p.pret;
 	}
 
+	//operator=
+	Produs& operator=(const Produs& p) {
+		//obj this deja exista
+		//destructor
+		//constructor de copiere
+		if (this != &p) {
+			if (this->denumire != nullptr) {
+				delete[] this->denumire;
+				this->denumire = nullptr;
+			}
+			if (p.denumire != nullptr) {
+				this->denumire = new char[strlen(p.denumire) + 1]; //pentru a nu ocupa aceeasi zona da memorie 
+				strcpy_s(this->denumire, strlen(p.denumire) + 1, p.denumire);
+			}
+			else { //de adaugat caci nu mai este
+				this->denumire = nullptr;
+			}
+			this->stoc = p.stoc;
+			this->pret = p.pret;
+		}
+		return *this;
+	}
+
 	void afisare() {
 		cout << "\nDenumire: ";
 		if (this->denumire != nullptr) {
@@ -90,8 +113,18 @@ int main() {
 	delete pp;
 	pp = nullptr;
 
-	p3 = p2; //operanzi (p3 si p2) pentru
-
+	p1= p3 = p2; //operanzi (p3 si p2) pentru
+	p1 = p1;
+	//autoasignare(nasoala daca am alocare dinamica)
+	//reguli supraincarcare opreatori
+	//p1. se identifica operanzii
+	//p2. daca primul operand este de tipul clasei, atunci se poate supraincarca printr o metoda a clasei
+	//iar primul operand este "inghitit" de this
+	//else la p2, (aka cout<<p;)
+	//daca primul operand nu este de tipul clasei, atunci se supraincarca
+	//prin functie globala(no more this)
+	//p3. ce returneaza operatorul?
+	//p4. ce se modifica!??!?!
 
 	return 0;
 }
