@@ -115,6 +115,7 @@ int main() {
 
 	p1= p3 = p2; //operanzi (p3 si p2) pentru
 	p1 = p1;
+	p1.afisare();
 	//autoasignare(nasoala daca am alocare dinamica)
 	//reguli supraincarcare opreatori
 	//p1. se identifica operanzii
