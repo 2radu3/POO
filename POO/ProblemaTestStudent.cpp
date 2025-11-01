@@ -129,6 +129,15 @@ public:
 
 };
 
+void verificareNota(int _numar) {
+	if (_numar > 0 && _numar < 11) {
+		cout << "\nReprezinta o nota";
+	}
+	else {
+		cout << "\nNu reprezinta o nota";
+	}
+}
+
 int main()
 {
 	int note[] = { 10, 12, 13, 8 };
@@ -139,6 +148,7 @@ int main()
 	s1.dubleazaUltimaNota();
 	s1.suplimentareBuget(100);
 	s1.afisare();
+	verificareNota(3);
 
 	return 0;
 }
