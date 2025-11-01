@@ -67,7 +67,7 @@ public:
 			notenoi[this->nrNote] = _nota;
 			this->note = notenoi;
 			this->nrNote = this->nrNote + 1;
-
+			 
 			/* this->nrNote = this->nrNote + 1;
 			this->note[this->nrNote - 1] = _nota; */
 		}
@@ -134,7 +134,7 @@ int main()
 	int note[] = { 10, 12, 13, 8 };
 	Student s1("Mihai", 200, 4, note);
 
-	s1.adaugaNota(2);
+	s1.adaugaNota(2); 
 	s1.eliminaSubMedie();
 	s1.dubleazaUltimaNota();
 	s1.suplimentareBuget(100);
