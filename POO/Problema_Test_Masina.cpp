@@ -105,7 +105,7 @@ public:
 				alimentariNoi[i] = this->alimentari[i];
 			}
 			alimentariNoi[this->nrAlimentari] = _alimentare;
-
+			 
 			delete[] this->alimentari;
 			this->alimentari = alimentariNoi;
 			this->nrAlimentari++;
