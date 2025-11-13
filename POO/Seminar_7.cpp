@@ -17,7 +17,7 @@ using namespace std;
 //ex1: este format din cifre diferite
 //ex2: e un nr impar/prim
 
-
+//!!!!operatorul ++ care e versiunea optimizata??
 
 class Abonat {
 	const int id;//generat automat pentru a oferi unicitate
@@ -69,10 +69,18 @@ public:
 		else {
 
 		}
-
+		this->nrApeluri = 0;
+		this->apeluri = nullptr;
 		}
 		return *this; //this e un pointer, * ia obiectul
-	
+	}
+
+	bool operator==(string _x) {
+		for (int i = 0; i < this->nrApeluri; i++) {
+			if (this->apeluri[i] == _x)
+				return true;
+		}
+		return false;
 	}
 
 	void afisare() {
@@ -92,12 +100,18 @@ public:
 		}
 	}
 
+	friend bool operator<(int _x, const Abonat& a);
 
 
 
 };
 
 int Abonat::generatorID = 1000;
+
+bool operator<(int _x, const Abonat& a) {
+	return _x < a.nrApeluri;
+	
+}
 
 int main() {
 	Abonat a1;
@@ -109,8 +123,22 @@ int main() {
 	Abonat a4 = a2;
 	a4.afisare();
 	a3.afisare();
-	a1 = a4;
-	a1.afisare();
+	a4 = a1;
+	a4.afisare();
+	if (a3 == "Victor") {// nu e case sensitive
+		cout << "\na4 l-a contactat pe victor.";
+	}
+	else {
+		cout << "\na4 nu l-a contactat pe victor.";
+	}
+
+	if (10 < a3) {
+		cout << "\na3 are nr apeluri > 10";
+	}
+	else {
+		cout << "\na3 are apeluri <=10";
+	}
+
 
 	return 0;
 }
